@@ -2,7 +2,7 @@ import { Booking, Mechanic, ServiceCatalogItem, ShopSettings } from '../types';
 
 export const DEFAULT_SHOP_SETTINGS: ShopSettings = {
   shopName: 'Prem Auto Service Center',
-  ownerPhone: '919876543210', // Used for WhatsApp links (Country code 91 for India as default example, editable)
+  ownerPhone: '918767627110', // Used for WhatsApp links (Country code 91 for India as default example, editable)
   shopAddress: 'Plot 45, Auto Hub Ring Road, Near Swargate Flyover, Pune, Maharashtra 411037',
   workingHours: 'Mon - Sat: 08:30 AM - 08:30 PM | Sun: 09:00 AM - 02:00 PM',
   autoOpenWhatsapp: true,

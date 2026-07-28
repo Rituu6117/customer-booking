@@ -1,0 +1,10 @@
+{
+  "name": "Prem Auto Service Center",
+  "description": "Customer Service Booking & Shop Owner Management Dashboard with WhatsApp notification integration and GPS tracking.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

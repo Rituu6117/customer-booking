@@ -3,7 +3,7 @@ import { SAMPLE_BOOKINGS, INITIAL_MECHANICS, DEFAULT_SHOP_SETTINGS } from '../da
 
 const BOOKINGS_STORAGE_KEY = 'prem_auto_bookings_v1';
 const MECHANICS_STORAGE_KEY = 'prem_auto_mechanics_v1';
-const SETTINGS_STORAGE_KEY = 'prem_auto_settings_v1';
+const SETTINGS_STORAGE_KEY = 'prem_auto_settings_v2';
 
 class StorageService {
   private listeners: (() => void)[] = [];
@@ -108,7 +108,9 @@ class StorageService {
   public getSettings(): ShopSettings {
     try {
       const data = localStorage.getItem(SETTINGS_STORAGE_KEY);
-      return data ? JSON.parse(data) : DEFAULT_SHOP_SETTINGS;
+      if (!data) return DEFAULT_SHOP_SETTINGS;
+      const parsed = JSON.parse(data);
+      return { ...DEFAULT_SHOP_SETTINGS, ...parsed };
     } catch {
       return DEFAULT_SHOP_SETTINGS;
     }

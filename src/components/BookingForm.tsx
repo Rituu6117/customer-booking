@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import heroVideo from '../assets/videos/hero.mp4';
 import { 
   User, Phone, Mail, Bike, Calendar, Clock, MapPin, 
   FileText, Camera, Navigation, CheckCircle2, AlertCircle, 
@@ -142,21 +143,51 @@ export const BookingForm: React.FC<BookingFormProps> = ({ onBookingSubmit }) => 
 
   const availableModels = BIKE_MODELS_BY_BRAND[bikeBrand] || BIKE_MODELS_BY_BRAND['Other / Custom'];
 
-  return (
-    <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6">
-      
-      {/* Page Title & Visual Banner */}
-      <div className="text-center mb-8">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F59E0B]/10 border border-[#F59E0B]/30 text-[#F59E0B] text-xs font-semibold uppercase tracking-wider mb-3">
-          <Wrench className="w-3.5 h-3.5" /> Direct Service Booking
-        </div>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Book Bike Service <span className="text-[#F59E0B]">Online</span>
+ return (
+<>
+  <section className="relative h-[80vh] overflow-hidden">
+
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="absolute inset-0 w-full h-full object-cover"
+    >
+      <source src={heroVideo} type="video/mp4" />
+    </video>
+
+    <div className="absolute inset-0 bg-black/60"></div>
+
+    <div className="relative z-10 flex h-full items-center justify-center text-center px-6">
+
+      <div>
+
+        <h1 className="text-5xl md:text-7xl font-extrabold text-white">
+          PREM AUTO
+          <span className="text-orange-500"> SERVICE CENTER</span>
         </h1>
-        <p className="mt-2 text-[#94A3B8] text-sm sm:text-base max-w-2xl mx-auto">
-          Schedule doorstep pickup or workshop appointment. Fast turnarounds, original spare parts & real-time WhatsApp updates.
+
+        <p className="mt-6 text-lg md:text-2xl text-gray-200">
+          Professional Bike Service • Pickup & Drop • Genuine Parts
         </p>
+
+        <a
+          href="#booking"
+          className="mt-8 inline-block bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-xl text-white font-bold"
+        >
+          Book Service Now
+        </a>
+
       </div>
+
+    </div>
+
+  </section>
+
+<div
+id="booking"
+className="max-w-4xl mx-auto py-8 px-4 sm:px-6">
 
       {/* Main Booking Card */}
       <form 
@@ -669,6 +700,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ onBookingSubmit }) => 
         </div>
 
       </form>
-    </div>
-  );
+   </div>
+</>
+);
 };
